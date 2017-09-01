@@ -23,37 +23,58 @@ public class Demo {
 			return null ;
 		}
 		
-		//转换成char数组。
-		char[] datas = data.toCharArray() ;
-		
 		//计算data中空格的数量
-		for(int i = 0 ; i < datas.length ; i++) {
-			if(datas[i] == ' ') {
+		for(int i = 0 ; i < data.length() ; i++) {
+			if(data.charAt(i) == ' ') {
 				num ++ ;
 			}
-		}
+		}		
 		
 		//计算需要新增的长度
 		addLength = num*2 ;
 		
 		//新建目的字符数组。
-		char[] datas1 = new char[addLength + datas.length];
+		char[] datas1 = new char[addLength + data.length()];
 		
 		//从后向前遍历datas数组。进行转换
 		int k = datas1.length-1 ;
-		for(int j = datas.length-1 ; j >= 0 ; j-- ) {
+		for(int j = data.length()-1 ; j >= 0 ; j-- ) {
 			
-			if(datas[j] == ' ') {
+			if(data.charAt(j) == ' ') {
 				datas1[k--] = '0' ;
 				datas1[k--] = '2' ;
 				datas1[k--] = '%' ;
 			}else {
-				datas1[k--] = datas[j] ;
+				datas1[k--] = data.charAt(j) ;
 			}
-			
 		}
 		
 		return String.valueOf(datas1) ;
+		
+	}
+	
+	//思路二：
+	//利用Java的可变数组进行处理。即可从前至后进行处理
+	public String demo2(String data) {
+		
+		//先对传入的data进行判空
+		if( data == null || data.equals("") || data.length() == 0) {
+			return null ;
+		}
+		
+		StringBuilder stringBuilder = new StringBuilder() ;
+		int k = 0 ;
+		for(int i = 0 ; i < data.length() ; i++) {
+			if(data.charAt(i) == ' ') {
+				stringBuilder.append( '0' ) ;
+				stringBuilder.append( '2' ) ;
+				stringBuilder.append( '%' ) ;
+			}else {
+				stringBuilder.append( data.charAt(i) ) ;
+			}
+		}
+		
+		return new String (stringBuilder) ;
 		
 	}
 	
@@ -69,6 +90,15 @@ public class Demo {
 		System.out.println( demo.demo1("i   love you") );
 		System.out.println( demo.demo1("   ") );
 		System.out.println( demo.demo1(data) );
+		
+		System.out.println("--------------------------------------------------");
+		
+		System.out.println( demo.demo2("i love you") );
+		System.out.println( demo.demo2("") );
+		System.out.println( demo.demo2(" ") );
+		System.out.println( demo.demo2("i   love you") );
+		System.out.println( demo.demo2("   ") );
+		System.out.println( demo.demo2(data) );
 	}
 	
 }
