@@ -63,7 +63,7 @@ public class Demo {
 		}
 		
 		StringBuilder stringBuilder = new StringBuilder() ;
-		int k = 0 ;
+	
 		for(int i = 0 ; i < data.length() ; i++) {
 			if(data.charAt(i) == ' ') {
 				stringBuilder.append( '0' ) ;
