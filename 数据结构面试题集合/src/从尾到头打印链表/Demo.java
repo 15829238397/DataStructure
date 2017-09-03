@@ -27,9 +27,9 @@ public class Demo {
 		
 	}
 	
-	//利用递归完成倒序输出
-	//终止条件为当前节点没有下一个节点。即headNode.getNext() == null
-	//利用递归达到最后一个节点处，然后倒序输出。
+//	利用递归完成倒序输出
+//	终止条件为当前节点没有下一个节点。即headNode.getNext() == null
+//	利用递归达到最后一个节点处，然后倒序输出。
 public static void printListReceverse1(ListNode headNode) {
 		
 		if(headNode != null) {
