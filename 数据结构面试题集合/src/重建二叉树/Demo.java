@@ -52,14 +52,17 @@ public class Demo {
 	//≤‚ ‘¥˙¬Î
 	public static void main(String[] args) {
 		
+		BinaryTreeNode root = null ;
+		
 		int[] preOrder = {1,2,4,7,3,5,6,8} ;
 		int[] inOrder = {4,7,2,1,5,3,8,6} ;
 		
 		try {
-			BinaryTreeNode root = constructCore(preOrder, inOrder) ;
+			root = constructCore(preOrder, inOrder) ;
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
+		
 	}
 	
 	public static class BinaryTreeNode{
