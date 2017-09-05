@@ -8,12 +8,14 @@ package 数值的整数次方;
 public class Demo {
 
 	//思路一：
-	//需要考虑到次方数的不同情况。当次方数为0;那么答案为1 ;当次方数为1;那么答案为base ;当base为0;那么答案为0 ;
-	//我们的目标是获得一个数的exponent次方，那么如果exponent是个偶数，我们就可以先算出exponent/2次方的值然后平方。
-	//如果是计数。我们可以得到exponent/2次方的值然后平方，然后乘上base。也就是
-	//
-	//a^n = a^(n/2) * a^(n/2)  (n为偶数)
-	//a^n = a^(n/2) * a^(n/2) * a  (n为奇数)
+	//	需要考虑到次方数的不同情况。当次方数为0;那么答案为1 ;当次方数为1;那么答案为base ;当base为0;那么答案为0 ;
+	//	我们的目标是获得一个数的exponent次方，那么如果exponent是个偶数，我们就可以先算出exponent/2次方的值然后平方。
+	//	如果是计数。我们可以得到exponent/2次方的值然后平方，然后乘上base。也就是
+	//	
+	//	a^n = a^(n/2) * a^(n/2)  (n为偶数)
+	//	a^n = a^(n/2) * a^(n/2) * a  (n为奇数)
+	//	另外在进行除2运算以及判断奇偶数是的%运算都尽量用位运算代替，可以优化运行效率。
+	
 	public static double power(double base , int exponent) {
 		
 		double result = 0 ;
