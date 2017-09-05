@@ -12,7 +12,7 @@ import java.util.Map;
 
 public class Demo {
 
-	private static Map<Integer , Integer> result = new HashMap<>() ;
+	public static Map<Integer , Integer> result = new HashMap<>() ;
 	
 	//思路一：
 	//斐波那契数列的第n项的计算过程是一个标准的递归
