@@ -12,6 +12,7 @@ import java.util.Map;
 
 public class Demo {
 
+	
 	public static Map<Integer , Integer> result = new HashMap<>() ;
 	
 	//Ë¼Â·Ò»£º
