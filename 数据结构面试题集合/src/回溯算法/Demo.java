@@ -52,6 +52,7 @@ public class Demo {
 			return true ;
 		}
 		
+		
 		//如果此点符合条件，那么对其四周进行检测
 		if( 0 <= row && row < rows && 0 <= col && col < cols && data.charAt(pathlength) == datas[row][col] && !(visited[row][col]) ) {
 			pathlength ++ ; 
